@@ -31,5 +31,10 @@ document.querySelector('.arrow').addEventListener('click', function () {
     for (let i = 0; i < arr.length; i++) {
         arr[i].classList.remove('selected');
     }
-    arr[3].classList.add('selected');
+    console.log(arr[arr.length - 1]);
+    arr[arr.length - 1].classList.add('selected');
+    let id = parseInt(arr[arr.length - 1].src.slice(-6, -5));
+    counter.innerHTML = "0" + id;
+    title.innerHTML = a[arr.length - 1].getAttribute("data-title");
+    review.innerHTML = a[arr.length - 1].getAttribute("data-review");
 });
