@@ -1,37 +1,30 @@
 body {
     font-family: Bradley Hand, cursive;
 }
-
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-
 .right {
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
-
 .my-slider {
     display: flex;
     align-items: flex-end;
 }
-
 .sliderContainer {
-    min-width: 600px;
-    width: 600px;
+    width: 800px;
     height: 600px;
     margin: auto;
     display: flex;
     align-items: flex-end;
 }
-
-img {
+.sliderContainer img {
     height: 200px;
     object-fit: cover;
 }
-
 .selected {
     animation: enlarge 0.8s;
     animation-fill-mode: forwards;
@@ -50,7 +43,6 @@ img {
     width: 400px;
     height: 300px;
     align-self: center;
-    background-color: #f3f3f3;
 }
 
 #rotated {
