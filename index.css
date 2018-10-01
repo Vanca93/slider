@@ -20,7 +20,7 @@ body {
 
 .sliderContainer {
     min-width: 600px;
-    width: 800px;
+    width: 600px;
     height: 600px;
     margin: auto;
     display: flex;
@@ -47,9 +47,10 @@ img {
 }
 
 .quote {
-    width: 300px;
+    width: 400px;
     height: 300px;
     align-self: center;
+    background-color: #f3f3f3;
 }
 
 #rotated {
@@ -68,10 +69,9 @@ img {
 
 .aboveSlider {
     position: absolute;
-    left: 40px;
-    z-index: 2;
-    width: 450px;
-    height: 390px;
+    left: 84px;
+    width: 595px;
+    height: 400px;
 }
 
 .quote h5 {
