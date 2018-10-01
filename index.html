@@ -51,9 +51,9 @@
         for (let i = 0; i < a.length; i++) {
             a[i].addEventListener('click', function(e) {
                 let id = parseInt(e.target.src.slice(-6, -5));
+                counter.innerHTML = "0" + id;
                 id = id > 3 ? id - 4 : id + 1;
                 slider.goTo(id);
-                counter.innerHTML = "0" + id;
                 title.innerHTML = a[i].getAttribute("data-title");
                 review.innerHTML = a[i].getAttribute("data-review");
                 for (let i = 0; i < a.length; i++) {
