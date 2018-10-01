@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/tiny-slider.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Animation Slider</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="aboveSlider">
+                <h3><span id="counter">04</span>/05</h3>
+                <h3 id="rotated">Reviews</h3>
+            </div>
+            <div class="sliderContainer">
+                <div class="my-slider">
+                    <img src="images/1.jpeg" alt="Image 1" data-title="Vance Laurent" data-review='"I was absolutely amazed by how quickly everything clicked! I cannot wait to experience this once again!"'>
+                    <img src="images/2.jpeg" alt="Image 2" data-title="John Sturridge" data-review='"Surely one of the best experiences ever! I could not have been more wrong about traveling abroad! Amazing people, amazing countries, amazing food!"'>
+                    <img src="images/3.jpeg" alt="Image 3" data-title="Sam Hurtley" data-review='"Had somebody told me earlier, I would have already prepared myself mentally for this adventure! I cannot believe how lucky I was to have an opportunity to go to one of the biggest temples in the world!"'>
+                    <img src="images/4.jpeg" class="selected" alt="Image 4" data-title="Ashley Whiskey" data-review='"I can just summarize my trip in three words: unforgettable, fantastic, mind-blowing!"'>
+                    <img src="images/5.jpeg" alt="Image 5" data-title="Adam Grant" data-review='"When I tell all my friends that I have conquered my greatest fears, they will flip! Easily the best traveling choice I have ever made! Cannot wait to do it all again!"'>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="arrow"></div>
+            <div class="quote">
+                <h5><span id="title">Ashley Whiskey</span></h5>
+                <p><span id="review">"I can just summarize my trip in three words: unforgettable, fantastic, mind-blowing!"</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/min/tiny-slider.js"></script>
+    <script>
+        var slider = tns({
+            container: ".my-slider",
+            items: 4,
+            slideBy: 1,
+            speed: 800,
+            gutter: 20,
+            controls: false,
+            nav: false,
+        })
+        let a = document.querySelectorAll('img');
+        let title = document.getElementById('title');
+        let review = document.getElementById('review');
+        let counter = document.getElementById('counter');
+        for (let i = 0; i < a.length; i++) {
+            a[i].addEventListener('click', function(e) {
+                let id = parseInt(e.target.src.slice(-6, -5));
+                counter.innerHTML = "0" + id;
+                id = id > 3 ? id - 4 : id + 1;
+                slider.goTo(id);
+                title.innerHTML = a[i].getAttribute("data-title");
+                review.innerHTML = a[i].getAttribute("data-review");
+                for (let i = 0; i < a.length; i++) {
+                    a[i].classList.remove('selected');
+                    a[i].src === e.target.src && a[i].classList.add('selected');
+                }
+            });
+        }
+        document.querySelector('.arrow').addEventListener('click', function () {
+            slider.goTo('prev');
+        });
+    </script>
+</body>
+</html>
