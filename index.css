@@ -20,7 +20,7 @@ body {
 
 .sliderContainer {
     min-width: 600px;
-    width: 600px;
+    width: 800px;
     height: 600px;
     margin: auto;
     display: flex;
