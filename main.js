@@ -26,11 +26,12 @@ for (let i = 0; i < a.length; i++) {
     });
 }
 document.querySelector('.arrow').addEventListener('click', function () {
+    const allImages = document.getElementsByTagName('img')
+    for (let i = 0; i < allImages.length; i++) {
+        allImages[i].classList.remove('selected');
+    }
     let arr = document.getElementsByClassName('tns-slide-active');
     slider.goTo('prev');
-    for (let i = 0; i < arr.length; i++) {
-        arr[i].classList.remove('selected');
-    }
     arr[arr.length - 1].classList.add('selected');
     let id = parseInt(arr[arr.length - 1].src.slice(-6, -5));
     counter.innerHTML = "0" + id;
